@@ -1,14 +1,14 @@
-<!-- payment.php -->
+<!-- order.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Payment - Kalpatru Coconut Water Home Delivery</title>
+    <title>Order - Kalpatru Coconut Water Home Delivery</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: url('images/coconut3.jpeg') no-repeat center center fixed;
+            background: url('images/coconut2.jpeg') no-repeat center center fixed;
             background-size: cover;
             padding: 20px;
             margin: 0;
@@ -33,22 +33,14 @@
             color: #2e7d32;
             font-weight: bold;
         }
-        input {
+        input, textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #81c784;
             border-radius: 4px;
             font-size: 16px;
             box-sizing: border-box;
-        }
-        .total {
-            font-size: 18px;
-            font-weight: bold;
-            color: #2e7d32;
-            margin-top: 10px;
-        }
-        .qr-code {
-            margin-top: 20px;
+            margin-bottom: 10px;
         }
         button {
             width: 100%;
@@ -66,38 +58,38 @@
             background-color: #4caf50;
         }
     </style>
-    <script>
-        function calculateTotal() {
-            const quantity = document.getElementById('quantity').value;
-            const pricePerUnit = 100;
-            const total = quantity * pricePerUnit;
-            document.getElementById('total').innerText = `Amount to be Paid: ₹${total}`;
-        }
-
-        function redirectToConfirmation() {
-            window.location.href = 'confirmation.php';
-        }
-    </script>
 </head>
 <body>
 
 <div class="container">
-    <h2>Payment Details</h2>
+    <h2> Fill the Delivery Details below & take a SCREENSHOT </h2>
 
-    <label for="quantity">Quantity of Coconut:</label>
-    <input type="number" id="quantity" name="quantity" min="1" oninput="calculateTotal()" required>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
 
-    <div class="total" id="total"> Amount to be Paid: ₹0</div>
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" placeholder="Enter your phone number" required>
 
-    <div class="qr-code">
-        <img src="images/upi.jpeg" alt="QR Code" width="200">
-        <p style="font-size: 16px; color: #555; margin-top: 5px;">NOTE: Take a screenshot of your payment</p>
-        <p style="font-size: 18px; font-weight: bold; color: #2e7d32;">UPI No: 9369250645</p>
-    </div>
+    <label for="block">Block:</label>
+    <input type="text" id="block" placeholder="Enter your block (D or E)" required>
 
-    <!-- Button redirects to confirmation page -->
-    <button onclick="redirectToConfirmation()">Place Order</button>
+    <label for="floor">Floor:</label>
+    <input type="text" id="floor" placeholder="Enter floor (1 to 12)" required>
+
+    <label for="house_no">House Number:</label>
+    <input type="text" id="house_no" placeholder="Enter house number" required>
+
+    <label for="remarks">Remarks:</label>
+    <textarea id="remarks" placeholder="Any remarks"></textarea>
+
+    <button onclick="redirectToPayment()"> Pay Now </button>
 </div>
+
+<script>
+    function redirectToPayment() {
+        window.location.href = 'payment.html';
+    }
+</script>
 
 </body>
 </html>

@@ -1,10 +1,10 @@
-<!-- confirmation.php -->
+<!-- confirmation.html -->
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Order Confirmation - Kalpatru Coconut Water Home Delivery</title>
+    <title>Order Confirmation - Kalpatru Coconut Water</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -12,6 +12,8 @@
             background-size: cover;
             padding: 20px;
             margin: 0;
+            text-align: center;
+            color: #2e7d32;
         }
         .container {
             background: rgba(255, 255, 255, 0.9);
@@ -20,43 +22,41 @@
             margin: 50px auto;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            text-align: center;
-        }
-        h2 {
-            color: #388e3c;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 16px;
-            color: #2e7d32;
-            line-height: 1.6;
-            margin-bottom: 20px;
         }
         button {
-            width: 100%;
-            padding: 15px;
             background-color: #66bb6a;
-            border: none;
+            padding: 10px 20px;
             color: white;
-            font-size: 16px;
-            border-radius: 4px;
-            margin-top: 20px;
+            border: none;
             cursor: pointer;
-            transition: 0.3s;
+            margin-top: 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
         button:hover {
             background-color: #4caf50;
+        }
+        a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        a:hover {
+            color: #1b5e20;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>Order Placing in progress... ✅</h2>
-    <p> Please share the both screenshots (Delivery Details & Payment) to below WhatsApp no. to confirm your order: <br> <br> <b>9369250645</b> <br>   
-       <br>Thank you for using our service! 🥥</p>
-    
-    <button onclick="window.location.href='index.php'">ReOrder</button>
+    <h2>Order Completed!</h2>
+    <p>Share both the screenshots (Delivery Details & Payment) below to confirm your order:</p>
+    <br>
+    <a href="https://wa.me/message/IEWH6KCSL5IBB1" target="_blank"> 👉 Click Here </a>
+    <br> <br>
+    <button onclick="location.href='index.html'">Reorder</button>
 </div>
 
 </body>

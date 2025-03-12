@@ -1,0 +1,104 @@
+<!-- payment.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Payment - Kalpatru Coconut Water Home Delivery</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('images/coconut3.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        h2 {
+            color: #388e3c;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-size: 16px;
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #81c784;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        .total {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2e7d32;
+            margin-top: 10px;
+        }
+        .qr-code {
+            margin-top: 20px;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #66bb6a;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #4caf50;
+        }
+    </style>
+    <script>
+        function calculateTotal() {
+            const quantity = document.getElementById('quantity').value;
+            const pricePerUnit = 100;
+            const total = quantity * pricePerUnit;
+            document.getElementById('total').innerText = `Total Amount: ₹${total}`;
+        }
+
+        function redirectToConfirmation() {
+            window.location.href = 'confirmation.html';
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Payment Details</h2>
+
+    <label for="quantity"> Enter no. of Coconuts to be delivered: </label>
+    <input type="number" id="quantity" name="quantity" min="1" oninput="calculateTotal()" required>
+
+    <div class="total" id="total"> Amount Payable: ₹0</div>
+
+    <div class="qr-code">
+        <img src="images/upi.jpeg" alt="QR Code" width="200">
+        <p style="font-size: 16px; color: #555; margin-top: 5px;">NOTE: Take a screenshot of your payment</p>
+        <p style="font-size: 18px; font-weight: bold; color: #2e7d32;">UPI No: 9369250645</p>
+    </div>
+
+    <button onclick="redirectToConfirmation()">Place Order</button>
+</div>
+
+</body>
+</html>
+
